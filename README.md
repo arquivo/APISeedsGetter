@@ -55,3 +55,5 @@ java -mx1000m -jar tika-server-1.20.jar --port=9998
 ```
 python rcaap_api.py
 ```
+## Scholar Tecnico API
+There's a README inside the ScholarTecnico_API folder, use that.
