@@ -67,6 +67,7 @@ const job = async function () {
 			//
 			// ]
 
+            let numberOfRetrievedDocs = currentData.length;
             switch (requestType) {
                 case 'units':
                     currentText = currentData
@@ -101,7 +102,7 @@ const job = async function () {
                         }
                     })
                     currentText = files.join('\n');
-                    currentData = files; // To display the amount of files 
+                    numberOfRetrievedDocs = files.length;
                     break;
             
                 default:
@@ -111,7 +112,7 @@ const job = async function () {
             if(currentText.length > 0){
                 await fs.appendFile(fileName, (currentPage == 0 ? '' : '\n') + currentText, writeToFileErrorFunc);
             }
-            console.log(fetchUrl + ' : ' + currentData.length)
+            console.log(fetchUrl + ' : ' + numberOfRetrievedDocs)
             await delay(delayBetweenRequests)
             currentPage += 1;
         }
