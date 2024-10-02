@@ -1,4 +1,4 @@
-// Crawls scholar.tecnico.ulisboa.pt/api to get the list of units, researchers and records and saves them in CSV files.
+// Crawls scholar.tecnico.ulisboa.pt/api to get the list of units, researchers, records (aka publications) and/or files and saves them in CSV files.
 
 import fetch from 'node-fetch';
 import fs from 'fs';
@@ -13,7 +13,7 @@ const delayBetweenRequests = 5000 // Don't want to overload the API
 
 const writeToFileErrorFunc = function (err) {
     if (err) {
-        return console.log(err);
+        return console.error(err);
     }
 }
 
@@ -40,21 +40,21 @@ const job = async function () {
 			// Link para um PDF:
 			// https://scholar.tecnico.ulisboa.pt/api/records/ RECORD-ID /file/ FILE-ID 
 			//
-			// A informação para construir o link vem dos pedidos com requestType = "records" ( https://scholar.tecnico.ulisboa.pt/api/records )
+			// A informação para construir o link vem dos pedidos com apiRequestType = "records" ( https://scholar.tecnico.ulisboa.pt/api/records )
 			// Link só é válido se items[].files[].rights == "open-access"
 			// RECORD-ID: items[].metadata.id
 			// FILE-ID: items[].files[].id
 			//
 			// "items": [
 			//   {
-			//	   "metadata": { "id": "R1" },
+			//	   "metadata": { "id": "Record1" },
 			//     "files": [
 			//	     {
-			//		   "id": "F1.pdf"
+			//		   "id": "File1.pdf"
 			//		   "rights": "open-access"
 			//		 },{
 			//		 {
-			//		   "id": "F2.pdf"
+			//		   "id": "File2.pdf"
 			//		   "rights": "restricted-access"
 			//		 }
 			//	   ]

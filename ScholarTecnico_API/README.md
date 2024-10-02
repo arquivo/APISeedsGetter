@@ -13,6 +13,7 @@ O script permite recolher até 4 dados diferentes:
 - npm
 
 # Como instalar
+Abrir um terminal ou powershell na pasta ScholarTecnico_API e correr o seguinte comando:
  `npm i`
 
 # Como escolher o que recolher da API
@@ -20,6 +21,7 @@ O script permite recolher até 4 dados diferentes:
 - Alterar a linha 8 (`const requestTypes = ['files'];`) para incluir o(s) tipo(s) de dados que se quer recolher da API
 
 # Como correr
+Abrir um terminal ou powershell na pasta ScholarTecnico_API e correr o seguinte comando:
  `node ./crawl.js`
 
 # Troubleshooting
