@@ -1,5 +1,5 @@
 # O que é que este script faz?
-Este script foi feito para recolher informação da API do IST (scholar.tecnico.ulisboa.pt/api). Quando se corre o script, para cada um dos tipos de dados disponíveis é criado um ficheiro CSV com os dados recolhidos. Enquando to script está a correr, vai imprimindo no ecrã o link do último pedido à API que analizou e quantos links extraiu desse pedido à API. 
+Este script foi feito para recolher informação da API do IST (scholar.tecnico.ulisboa.pt/api). Quando se corre o script, para cada um dos tipos de dados disponíveis é criado um ficheiro CSV com os dados recolhidos. Enquanto o script está a correr, vai imprimindo no ecrã o link do último pedido à API que analizou e quantos links extraiu desse pedido à API. 
 
 ## Tipos de dados disponíveis
 O script permite recolher até 4 dados diferentes:
